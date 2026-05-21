@@ -2,10 +2,21 @@
 {
     internal class Robot
     {
+        //Struktur på en klass
+        //1. Privata fält
+        //2. Publika properties
+        //3. Konstruktor
+        //4. Methoder.
+
+
+        //Privata fält
         private string _name;
 
         private int _age;
 
+        //Publika properties
+        //Lite extra funktionalitet här, där om vi sätter ett värde under 0 så sätts det automatiskt till 0.
+        //Snippet propfull skapar en property med ett bakomliggnade fält
         public int Age
         {
             get { return _age; }
@@ -19,9 +30,15 @@
         }
 
         //public int Salary { get; private set; }
+        //Autoproperty, om man inte behöver ha validering eller liknande i koden.
+        //Snippet prop.
+        //Inget set i detta fallet innebär att det inte går att sätta värdet utanför konstruktorn.
+        //Hade vi haft en private set hade det gått att sätta i klassen men inte utanför.
         public int Salary { get;}
 
-
+        //Konstruktor
+        //Snippet ctor
+        //Fyller alla nya instanser med datan som anges.
         public Robot(string name, int age, int salary)
         {
             _name = name;
@@ -29,6 +46,8 @@
             Salary = salary; 
         }
 
+        //Metoder
+        //För att hämta och sätta värden av privata fält i detta fallet. 
         public void SetSalary(int salary)
         {
             //Salary = salary; 
