@@ -13,5 +13,11 @@
             Employee employee = new Employee(name, salary);
             _employees.Add(employee); 
         }
+
+        public List<Employee> GetEmployees()
+        {
+            //ToDo: Fix this, not a good way to do it
+            return _employees; 
+        }
     }
 }
