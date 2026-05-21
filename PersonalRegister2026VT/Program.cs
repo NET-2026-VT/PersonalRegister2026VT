@@ -3,19 +3,19 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Console.Write("Please enter a name for your robot: ");
-            string name = Console.ReadLine();
-
-            Robot robot = new Robot(name, 67, 25000);
-            //robot._name = "C3PO";
-            //robot.SetName("C3PO");
-            robot.Age = 1;
-            //robot.Salary = 25000;
-            Console.WriteLine(robot.GetName());
-            Console.WriteLine(robot.Age);
-            Console.WriteLine(robot.Salary);
-
+        {            
+            Robot r1 = new Robot("R1", 25, 25000);
+            //r1.Count;
+            //Robot.Count; 
+            Console.WriteLine(Robot.Count);
+            Robot r2 = new Robot("R2", 25, 25000);
+            Console.WriteLine(Robot.Count);
+            Robot r3 = new Robot("R3", 25, 25000);
+            Console.WriteLine(Robot.Count);
+            Robot r4 = new Robot("R4", 25, 25000);
+            Console.WriteLine(Robot.Count);
+            Robot r5 = new Robot("R5", 25, 25000);
+            Console.WriteLine(Robot.Count);
 
             Console.ReadKey();
         }

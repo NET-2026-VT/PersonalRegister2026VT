@@ -30,11 +30,16 @@
         }
 
         //public int Salary { get; private set; }
+
         //Autoproperty, om man inte behöver ha validering eller liknande i koden.
         //Snippet prop.
         //Inget set i detta fallet innebär att det inte går att sätta värdet utanför konstruktorn.
         //Hade vi haft en private set hade det gått att sätta i klassen men inte utanför.
         public int Salary { get;}
+
+        //Statisk innebär att den är en del av klassen snarare än klassinstanser, kommer ha samma värde i hela applikationen
+        //Kallas med Robot.Count(klassen) snarare än r.Count (instansen)
+        public static int Count { get; set; }
 
         //Konstruktor
         //Snippet ctor
@@ -43,7 +48,8 @@
         {
             _name = name;
             Age = age;
-            Salary = salary; 
+            Salary = salary;
+            Count++; 
         }
 
         //Metoder
