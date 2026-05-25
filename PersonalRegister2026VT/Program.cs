@@ -61,7 +61,8 @@ namespace PersonalRegister2026VT
         private static void AddEmployee()
         {
             string name = Util.AskForString("Name");
-            _payroll.AddEmployee(name, 10);
+            uint salary = Util.AskForUInt("Salary"); 
+            _payroll.AddEmployee(name, salary);
         }
 
         private static void PrintEmployees()

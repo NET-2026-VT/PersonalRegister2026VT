@@ -1,4 +1,6 @@
-﻿namespace PersonalRegister2026VT.Helpers
+﻿using System.Formats.Asn1;
+
+namespace PersonalRegister2026VT.Helpers
 {
     public static class Util
     {
@@ -19,6 +21,25 @@
             } while (!success);
 
             return answer; 
+        }
+
+        public static uint AskForUInt(string prompt)
+        {
+            do
+            {
+                string input = AskForString(prompt);
+
+                if(uint.TryParse(input, out uint result))
+                {                    
+                    return result;
+                }
+                else
+                {
+                    //Write error message if something goes wrong
+                    Console.WriteLine($"Not a valid {prompt}");
+                }
+
+            } while (true);
         }
     }
 }
