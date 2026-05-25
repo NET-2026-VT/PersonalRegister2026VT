@@ -41,13 +41,13 @@ namespace PersonalRegister2026VT
 
                 switch (input)
                 {
-                    case "1":
+                    case MenuHelpers.Add:
                         AddEmployee();
                         break;
-                    case "2":
+                    case MenuHelpers.Print:
                         PrintEmployees();
                         break;
-                    case "Q":
+                    case MenuHelpers.Quit:
                         Environment.Exit(0);
                         break;
                     default:
@@ -77,7 +77,9 @@ namespace PersonalRegister2026VT
 
         private static void ShowMainMenu()
         {
-            Console.WriteLine($"1.Add{Environment.NewLine}2.Print{Environment.NewLine}Q.Exit");
+            Console.WriteLine($"{MenuHelpers.Add}.Add{Environment.NewLine}" +
+                $"{MenuHelpers.Print}.Print{Environment.NewLine}" +
+                $"{MenuHelpers.Quit}.Exit");
         }
 
         private static void SeedData()
