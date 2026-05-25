@@ -3,9 +3,9 @@
     internal class Employee
     {
         public string Name { get; }
-        public int Salary { get; set; }
+        public uint Salary { get; set; }
 
-        public Employee(string name, int salary)
+        public Employee(string name, uint salary)
         {
             //Validate
             Name = name;

@@ -48,6 +48,7 @@ namespace PersonalRegister2026VT
                         PrintEmployees();
                         break;
                     case "Q":
+                        Environment.Exit(0);
                         break;
                     default:
                         break;
