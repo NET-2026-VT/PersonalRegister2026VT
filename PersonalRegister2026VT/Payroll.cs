@@ -13,11 +13,15 @@
             Employee employee = new Employee(name, salary);
             _employees.Add(employee); 
         }
-
-        public List<Employee> GetEmployees()
+        internal void AddEmployee(Employee emp)
         {
-            //ToDo: Fix this, not a good way to do it
-            return _employees; 
+            _employees.Add(emp);
         }
+
+        public IReadOnlyList<Employee> GetEmployees()
+        {
+            return _employees.AsReadOnly(); 
+        }
+
     }
 }

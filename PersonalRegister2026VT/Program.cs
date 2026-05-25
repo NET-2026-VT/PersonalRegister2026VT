@@ -5,8 +5,32 @@
         private static Payroll payroll = new Payroll();
         static void Main(string[] args)
         {
-            //Employee emp = new Employee("Kalle", 25000);
+            #region refference_type_demo
             //Payroll payroll = new Payroll();
+            //Employee emp = new Employee("Kalle", 25000);
+            //payroll.AddEmployee(emp);
+
+            //var employees = payroll.GetEmployees();
+
+            //foreach (Employee employee in employees)
+            //{
+            //    Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary}");
+            //}
+
+            //employees.Add(emp);
+
+            //List<Employee> employees2 = payroll.GetEmployees();
+
+            //foreach (Employee employee in employees2)
+            //{
+            //    Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary}");
+            //}
+
+            //Console.ReadLine();
+            #endregion
+
+
+
             SeedData();
             do
             {
@@ -32,11 +56,11 @@
 
         private static void PrintEmployees()
         {
-            List<Employee> employees = payroll.GetEmployees();
+           // List<Employee> employees = payroll.GetEmployees();
             
-            foreach(Employee employee in employees)
+            foreach(Employee employee in payroll.GetEmployees())
             {
-                Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary}");
+                Console.WriteLine(employee);
             }
         }
 
