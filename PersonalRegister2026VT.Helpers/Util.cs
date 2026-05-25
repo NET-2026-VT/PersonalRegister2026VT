@@ -1,20 +1,21 @@
-﻿using System.Formats.Asn1;
+﻿using PersonalRegister2026VT.Abstractions;
+using System.Formats.Asn1;
 
 namespace PersonalRegister2026VT.Helpers
 {
     public static class Util
     {
-        public static string AskForString(string prompt)
+        public static string AskForString(string prompt, IUI ui )
         {
             string answer;
             bool success = false;
             do
             {
-                Console.Write($"{prompt}: ");
-                answer = Console.ReadLine()!;
+                ui.Print($"{prompt}: ");
+                answer = ui.GetInput();
 
                 if (string.IsNullOrWhiteSpace(answer))
-                    Console.WriteLine($"You must enter a valid {prompt}");
+                    ui.Print($"You must enter a valid {prompt}");
                 else
                     success = true;
 
@@ -23,11 +24,11 @@ namespace PersonalRegister2026VT.Helpers
             return answer; 
         }
 
-        public static uint AskForUInt(string prompt)
+        public static uint AskForUInt(string prompt, IUI ui)
         {
             do
             {
-                string input = AskForString(prompt);
+                string input = AskForString(prompt, ui);
 
                 if(uint.TryParse(input, out uint result))
                 {                    
@@ -36,7 +37,7 @@ namespace PersonalRegister2026VT.Helpers
                 else
                 {
                     //Write error message if something goes wrong
-                    Console.WriteLine($"Not a valid {prompt}");
+                    ui.Print($"Not a valid {prompt}");
                 }
 
             } while (true);

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalRegister2026VT.Abstractions\PersonalRegister2026VT.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
