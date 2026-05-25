@@ -1,4 +1,6 @@
-﻿namespace PersonalRegister2026VT.Abstractions
+﻿using PersonalRegister2026VT.Abstractions;
+
+namespace PersonalRegister2026VT.UI
 {
     public class ConsoleUI : IUI
     {
