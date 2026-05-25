@@ -2,4 +2,5 @@
   <Project Path="PersonalRegister2026VT.Abstractions/PersonalRegister2026VT.Abstractions.csproj" Id="6cb9a390-d506-4521-b857-f12d16dc7b97" />
   <Project Path="PersonalRegister2026VT.Helpers/PersonalRegister2026VT.Helpers.csproj" Id="eb340894-dcc3-4374-9c6e-db0b36e81517" />
   <Project Path="PersonalRegister2026VT/PersonalRegister2026VT.csproj" />
+  <Project Path="PersonalRegister2026VTTests/PersonalRegister2026VTTests.csproj" Id="04db55ad-5742-4258-8523-55a2597e5b6f" />
 </Solution>
