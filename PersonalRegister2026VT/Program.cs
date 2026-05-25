@@ -2,10 +2,10 @@
 {
     internal class Program
     {
-        private static Payroll payroll = new Payroll();
+        private static Payroll _payroll = new Payroll();
         static void Main(string[] args)
         {
-            #region refference_type_demo
+            #region reference_type_demo
             //Payroll payroll = new Payroll();
             //Employee emp = new Employee("Kalle", 25000);
             //payroll.AddEmployee(emp);
@@ -40,9 +40,10 @@
                 switch (input)
                 {
                     case "1":
+                        AddEmployee();
                         break;
                     case "2":
-                        PrintEmployees(); 
+                        PrintEmployees();
                         break;
                     case "Q":
                         break;
@@ -54,11 +55,32 @@
 
         }
 
+        private static void AddEmployee()
+        {
+            string name;
+            //int salary = int.Parse(Console.ReadLine());
+
+            bool success = false;
+            do
+            {
+                Console.Write("Name: ");
+                name = Console.ReadLine()!;
+
+                if (string.IsNullOrWhiteSpace(name))
+                    Console.WriteLine("You must enter a valid name");               
+                else
+                    success = true;
+
+            } while (!success);
+
+            _payroll.AddEmployee(name, 10);
+        }
+
         private static void PrintEmployees()
         {
-           // List<Employee> employees = payroll.GetEmployees();
-            
-            foreach(Employee employee in payroll.GetEmployees())
+            // List<Employee> employees = payroll.GetEmployees();
+
+            foreach (Employee employee in _payroll.GetEmployees())
             {
                 Console.WriteLine(employee);
             }
@@ -71,12 +93,12 @@
 
         private static void SeedData()
         {
-            payroll.AddEmployee("Nisse", 30000);
-            payroll.AddEmployee("Anna", 35000);
-            payroll.AddEmployee("Stig", 40000);
-            payroll.AddEmployee("Stina", 45000);
-            payroll.AddEmployee("Anders", 50000);
-            payroll.AddEmployee("Åsa", 55000);
+            _payroll.AddEmployee("Nisse", 30000);
+            _payroll.AddEmployee("Anna", 35000);
+            _payroll.AddEmployee("Stig", 40000);
+            _payroll.AddEmployee("Stina", 45000);
+            _payroll.AddEmployee("Anders", 50000);
+            _payroll.AddEmployee("Åsa", 55000);
         }
     }
 }
