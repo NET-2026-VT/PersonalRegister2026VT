@@ -1,6 +1,6 @@
 ﻿namespace PersonalRegister2026VT.Abstractions
 {
-    public class ConsoleUI
+    public class ConsoleUI : IUI
     {
         public void Print(string message)
         {
@@ -9,7 +9,7 @@
 
         public string GetInput()
         {
-            return Console.ReadLine() ?? string.Empty; 
+            return Console.ReadLine() ?? string.Empty;
         }
     }
 }

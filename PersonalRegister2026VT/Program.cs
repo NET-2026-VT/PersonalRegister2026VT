@@ -5,8 +5,8 @@ namespace PersonalRegister2026VT
 {
     internal class Program
     {
-        private static Payroll _payroll = new Payroll();
-        private static ConsoleUI _ui = new(); 
+        private static IPayroll _payroll = new Payroll();
+        private static IUI _ui = new ConsoleUI(); 
         static void Main(string[] args)
         {
             #region reference_type_demo
