@@ -1,10 +1,12 @@
-﻿using PersonalRegister2026VT.Helpers;
+﻿using PersonalRegister2026VT.Abstractions;
+using PersonalRegister2026VT.Helpers;
 
 namespace PersonalRegister2026VT
 {
     internal class Program
     {
         private static Payroll _payroll = new Payroll();
+        private static ConsoleUI _ui = new(); 
         static void Main(string[] args)
         {
             #region reference_type_demo
@@ -37,7 +39,7 @@ namespace PersonalRegister2026VT
             do
             {
                 ShowMainMenu();
-                string input = Console.ReadLine() ?? string.Empty;
+                string input = _ui.GetInput(); 
 
                 switch (input)
                 {
@@ -71,7 +73,7 @@ namespace PersonalRegister2026VT
 
             foreach (Employee employee in _payroll.GetEmployees())
             {
-                Console.WriteLine(employee);
+                _ui.Print(employee.ToString());
             }
         }
 

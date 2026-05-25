@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersonalRegister2026VT
 {
-    internal enum SalaryLevel
+    public enum SalaryLevel
     {
         Senior,
         Junior
