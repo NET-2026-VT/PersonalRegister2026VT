@@ -7,6 +7,7 @@
 
         public Employee(string name, int salary)
         {
+            //Validate
             Name = name;
             Salary = salary; 
         }

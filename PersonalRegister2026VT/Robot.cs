@@ -12,20 +12,20 @@
         //Privata fält
         private string _name;
 
-        private int _age;
+       // private int _age;
 
         //Publika properties
         //Lite extra funktionalitet här, där om vi sätter ett värde under 0 så sätts det automatiskt till 0.
         //Snippet propfull skapar en property med ett bakomliggnade fält
         public int Age
         {
-            get { return _age; }
+            get { return field; }
             set
             {
                 if (value < 0)
-                    _age = 0;
+                    field = 0;
                 else
-                _age = value;
+                field = value;
             }
         }
 
