@@ -1,4 +1,6 @@
-﻿namespace PersonalRegister2026VT
+﻿using PersonalRegister2026VT.Helpers;
+
+namespace PersonalRegister2026VT
 {
     internal class Program
     {
@@ -57,22 +59,7 @@
 
         private static void AddEmployee()
         {
-            string name;
-            //int salary = int.Parse(Console.ReadLine());
-
-            bool success = false;
-            do
-            {
-                Console.Write("Name: ");
-                name = Console.ReadLine()!;
-
-                if (string.IsNullOrWhiteSpace(name))
-                    Console.WriteLine("You must enter a valid name");               
-                else
-                    success = true;
-
-            } while (!success);
-
+            string name = Util.AskForString("Name");
             _payroll.AddEmployee(name, 10);
         }
 
