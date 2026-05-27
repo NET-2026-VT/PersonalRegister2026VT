@@ -19,7 +19,7 @@
 
         public Employee(string name, uint salary)
         {
-            //Validate
+            ArgumentException.ThrowIfNullOrWhiteSpace(name); 
             Name = name;
             Salary = salary; 
         }

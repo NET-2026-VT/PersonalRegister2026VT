@@ -11,7 +11,24 @@ namespace PersonalRegister2026VT
             IPayroll payroll = new Payroll();
             IUI ui = new ConsoleUI();
             Main main = new Main(ui, payroll);
-            main.Run(); 
+            try
+            {
+            main.Run();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                throw; 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
         }
 
         
