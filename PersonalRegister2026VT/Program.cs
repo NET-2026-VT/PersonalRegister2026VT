@@ -23,7 +23,24 @@ namespace PersonalRegister2026VT
 
             var res3 = Util.AskForUInt("", ui, min:  3, max: 6);
             Main main = new Main(ui, payroll);
-            main.Run(); 
+            try
+            {
+            main.Run();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                throw; 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
         }
 
         
