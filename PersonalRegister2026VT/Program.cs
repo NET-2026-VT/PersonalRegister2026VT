@@ -10,6 +10,18 @@ namespace PersonalRegister2026VT
         {
             IPayroll payroll = new Payroll();
             IUI ui = new ConsoleUI();
+
+            var res = Util.AskForString("Test", ui, s =>
+            {
+                //..
+                //..
+                //..
+                return s.Length > 5;
+            });
+
+            var res2 = Util.AskForString("trsfd", ui);
+
+            var res3 = Util.AskForUInt("", ui, min:  3, max: 6);
             Main main = new Main(ui, payroll);
             main.Run(); 
         }

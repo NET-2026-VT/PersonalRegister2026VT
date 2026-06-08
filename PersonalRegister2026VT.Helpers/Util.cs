@@ -5,7 +5,7 @@ namespace PersonalRegister2026VT.Helpers
 {
     public static class Util
     {
-        public static string AskForString(string prompt, IUI ui )
+        public static string AskForString(string prompt, IUI ui, Func<string, bool>? validate = null )
         {
             string answer;
             bool success = false;
@@ -16,6 +16,10 @@ namespace PersonalRegister2026VT.Helpers
 
                 if (string.IsNullOrWhiteSpace(answer))
                     ui.Print($"You must enter a valid {prompt}");
+                if(validate != null && !validate(answer))
+                {
+                    ui.Print($"You must enter a valid {prompt}");
+                }
                 else
                     success = true;
 
@@ -24,23 +28,21 @@ namespace PersonalRegister2026VT.Helpers
             return answer; 
         }
 
-        public static uint AskForUInt(string prompt, IUI ui)
+        public static uint AskForUInt(string prompt, IUI ui, uint? min = null, uint? max = null)
         {
-            do
+            return uint.Parse(AskForString(prompt, ui, (input) =>
             {
-                string input = AskForString(prompt, ui);
+                if (!uint.TryParse(input, out uint result))
+                    return false;
 
-                if(uint.TryParse(input, out uint result))
-                {                    
-                    return result;
-                }
-                else
-                {
-                    //Write error message if something goes wrong
-                    ui.Print($"Not a valid {prompt}");
-                }
+                if(min.HasValue && result < min.Value)
+                    return false;
 
-            } while (true);
+                if (max.HasValue && result > max.Value)
+                    return false;
+
+                return true;
+            }));
         }
     }
 }
