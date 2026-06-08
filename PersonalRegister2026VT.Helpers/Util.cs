@@ -5,7 +5,7 @@ namespace PersonalRegister2026VT.Helpers
 {
     public static class Util
     {
-        public static string AskForString(string prompt, IUI ui, Func<string, bool>? validate = null )
+        public static string AskForString(string prompt, IUI ui, Predicate<string>? validate = null )
         {
             string answer;
             bool success = false;
